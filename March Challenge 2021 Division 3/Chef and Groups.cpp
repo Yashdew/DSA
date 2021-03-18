@@ -8,20 +8,24 @@ int main()
    
     while (testCases--)
     {
-        string str;
-        cin>>str;
-        long long int count=0;
-        for(long long int i=1;i<str.length();i++)
+        string strip;
+        cin>>strip;
+        long long int counter=0;
+        if(strip[0]=='1')
         {
-            if(str[i]=='1')
+            counter=1;
+        }
+        for(long long int temp=1;temp<strip.length();temp++)
+        {
+            if(strip[temp]=='1')
             {
-                if(str[i-1]=='0')
+                if(strip[temp-1]=='0')
                 {
-                    count++;
+                    counter++;
                 }
             }
         }
-        cout<<count<<endl;
+        cout<<counter<<endl;
     }
 
     return 0;

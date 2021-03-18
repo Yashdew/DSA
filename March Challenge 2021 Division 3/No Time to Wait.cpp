@@ -5,30 +5,28 @@ int main()
     int N,H,x;
     cin>>N>>H>>x;
 
-    vector<int> T;
+    int T[N];
     for(int i=0;i<N;i++)
     {
-        int temp;
-        cin>>temp;
-        t.push_back(temp);
+        cin>>T[i];
     }
 
-    int flag=0;
+    int flag=1;
     for(int i=0;i<N;i++)
     {
-        if( t[i]+x >=H )
+        if( H  <= T[i]+x  )
         {
-            flag=1;
+            flag=0;
             break;
         }
 
     }
 
-    if(flag==1)
+    if(flag==0)
     {
         cout<<"YES"<<endl;
     }
-    else if(flag==0)
+    else if(flag==1)
     {
         cout<<"NO"<<endl;
     }

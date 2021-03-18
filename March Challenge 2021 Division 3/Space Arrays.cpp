@@ -7,47 +7,45 @@ int main()
    
     while (testCases--)
     {
-        long long int nums;
-        vector<long long int> array;
-        vector<long long int> permutation;
-        cin>>nums;
-
-        for(long long int i=0;i<nums;i++)
+        long long int num;
+        cin>>num;
+        long long int arr[num];
+        for(long long int temp=0;temp<num;temp++)
         {
-            long long int temp;
-            cin>>temp;
-
-            array.push_back(temp);
+            cin>>arr[temp];
         }
         
-        sort(array.begin(),array.end());
+        sort(arr,arr+num);
         int flag=0;
         int sum=0;
-        for(int i=0;i<array.size();i++)
+        for(int temp=0;temp<num;temp++)
         {
-            if( i+1 > array[i])
+            if( temp+1 < arr[temp])
             {
                 flag=1;   
                 break;
             }
             else
             {
-                sum+= i+1 - array[i] 
+                sum+= temp+1 - arr[temp];
             }
         }
         if(flag==1)
         {
+            
             cout<<"Second"<<endl;
         }
         else
         {
             if(sum%2==0)
             {
+                //cout<<"First"<<endl;
                 cout<<"Second"<<endl;
             }
             else
             {
                 cout<<"First"<<endl;
+                //cout<<"Second"<<endl;
             }
         }
         
