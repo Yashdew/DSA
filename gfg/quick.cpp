@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include<vector>
 using namespace std;
 
 vector<int> swap(vector<int> array,int l,int r)
@@ -12,12 +13,11 @@ vector<int> swap(vector<int> array,int l,int r)
 }
 int partation(vector<int> array,int l,int r)
 {
-    // cout<<"part"<<l<<r<<"\n";
     int pivot = array[r];
     int i=l-1;
     for(int j=l;j<r-1;j++)
     {
-        if(array[j] < pivot)
+        if(array[j] > pivot)
         {
             i++;
            array = swap(array,i,j);
@@ -29,7 +29,6 @@ int partation(vector<int> array,int l,int r)
 
 vector<int> quicksort(vector<int> array,int l,int r)
 {
-    // cout<<"qs"<<l<<r<<"\n";
     if(l<r)
     {
         int pivot = partation(array, l, r);
