@@ -1,64 +1,60 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> swap(vector<int> array,int l,int r)
+void swap(int array[],int i,int j)
 {
     // cout<<"swap "<<l<<r<<"\n";
-    int temp = array[l];
-    array[l] = array[r];
-    array[r] = temp;
-
-    return array;
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
 }
-int partation(vector<int> array,int l,int r)
+int part(int array[],int l,int r)
 {
     // cout<<"part"<<l<<r<<"\n";
     int pivot = array[r];
     int i=l-1;
-    for(int j=l;j<r-1;j++)
+    for(int j=l;j<r;j++)
     {
         if(array[j] < pivot)
         {
             i++;
-           array = swap(array,i,j);
+            swap(array,i,j);
         }
     }
-    array =  swap(array,i+1,r);
+    swap(array,i+1,r);
     return i+1;
 }
 
-vector<int> quicksort(vector<int> array,int l,int r)
+void print(int array[],int num)
 {
-    // cout<<"qs"<<l<<r<<"\n";
-    if(l<r)
-    {
-        int pivot = partation(array, l, r);
-
-        quicksort(array,l,pivot-1);
-        
-        quicksort(array,pivot+1,r);
-    }
-
-    return array;
-}
-
-void print(vector<int> array)
-{
-    for(int i=0;i<array.size();i++)
+    for(int i=0;i<num;i++)
     {
         cout<<array[i]<<endl;
     }
 }
     
+void quicksort(int array[],int l,int r)
+{
+    if(l<r)
+    {
+        int pivot = part(array, l, r);
+
+        quicksort(array,l,pivot-1);
+        
+        quicksort(array,pivot+1,r);
+    }
+}
+
+
 int main()
 {  
     
-    vector<int> array= {10,9,8,6,2,1,9};
+    int array[7]= {10,9,8,6,2,1,9};
     int num=10;
     //cin>>num;
-    
-    array = quicksort(array,0,array.size());
-    print(array);
+    //print(array,7);
+    quicksort(array,0,6);
+    print(array,7);
     
     return 0;
 }
