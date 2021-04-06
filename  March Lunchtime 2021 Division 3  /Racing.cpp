@@ -7,11 +7,11 @@ int main()
    
     while (testCases--)
     {
-        long long int X, R, M,temp;
+        long long int X, R, M;
         cin>>X>>R>>M;
         R*=60;
         M*=60;
-        if( X > R)
+        if( X < R)
         {
             if ( X + 2*(R-X) > M )
                 cout<<"NO"<<endl;
