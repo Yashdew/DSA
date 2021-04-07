@@ -42,7 +42,7 @@ long long int mergesort(long long int array[],long long int nums[],long long int
 {
     long long int mid,count=0;
 
-    if(left<right)
+    if(left>=right)
     {
         mid = (right+left)/2;
         count+=mergesort(array,nums,left,mid);
