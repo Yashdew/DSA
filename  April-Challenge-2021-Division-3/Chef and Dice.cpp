@@ -17,7 +17,7 @@ int main()
             cout<<60<<endl;
         else if(a==4)
             cout<<80<<endl;
-
+    
     }
 
     return 0;
