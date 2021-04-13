@@ -1,1 +1,1 @@
-# Data-structure
+# DSA
