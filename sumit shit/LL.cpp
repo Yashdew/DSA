@@ -27,7 +27,6 @@ int main()
                 p=p->next;
             }
             p->next=temp;
-            //head->next = temp;
         }
     }
 
