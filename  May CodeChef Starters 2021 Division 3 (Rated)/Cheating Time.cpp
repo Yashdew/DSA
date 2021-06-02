@@ -42,7 +42,7 @@ void solve()
            UL = array[i][1];
         }
     }
-    timecheck = timecheck + UL - LL;
+    //timecheck = timecheck + UL - LL;
     if( totaltime - checkTime >= cheatTime )
         cout<<"YES";
     else
