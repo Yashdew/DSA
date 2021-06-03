@@ -1,3 +1,7 @@
+//Name : Yash Dewangan
+//Div2 - T20230
+//Batch – B
+
 #include<stdio.h>
 //#include<conio.h>
 #include<stdlib.h>

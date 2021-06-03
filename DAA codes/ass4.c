@@ -1,5 +1,8 @@
 
-
+//Name : Yash Dewangan
+//Div2 - T20230
+//Batch – B
+//Write a program to solve the travelling salesman problem and to print the path and the cost using Dynamic Programming
 #include<stdio.h>
 int cost[10][10],n;
 struct term1{

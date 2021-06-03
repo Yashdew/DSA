@@ -1,3 +1,8 @@
+//Name : Yash Dewangan
+//Div2 - T20230
+//Batch – B
+//Write a recursive program to find the solution of placing n queens on chessboard so that no two queens 
+//attack each other using Backtracking
 #include<stdio.h>
 #include<math.h>
 int NQueen(int r ,int n);
