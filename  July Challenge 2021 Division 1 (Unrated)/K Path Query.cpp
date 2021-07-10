@@ -13,7 +13,12 @@ void solve()
         array[u].push_back(v);
         array[v].push_back(u);
     }
+    vector<int> visited(nodes+1,0);
 
+    for(int i=0;i;i<array.size();i++)
+    {
+        
+    }
     int query;
     cin>>query;
 
