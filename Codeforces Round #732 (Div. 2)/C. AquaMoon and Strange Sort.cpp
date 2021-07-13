@@ -1,103 +1,57 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-bool ischeck(vector<char> dir)
-{
-    for(int i=0;i<dir.size();i++)
-    {
-        if(dir[i]!='R')
-            return false;
-    }
-    return true;
-}
-
-void sorting(vector<int> &array,vector<char> &dir)
-{
-    for(int i=0;i<array.size()-1;i++)
-    {
-        for(int j=i+1;j<array.size();j++)
-        {
-            if(array[i] > array[j])
-            {
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-
-                if(dir[i]=='R')
-                {
-                    dir[i]='L';
-                }
-                else
-                {
-                    dir[i]='R';
-                }
-
-                if(dir[j]=='R')
-                {
-                    dir[j]='L';
-                }
-                else
-                {
-                    dir[j]='R';
-                }
-            }
-        }
-    }
-}
-
-void sorting1(vector<int> &array,vector<char> &dir)
-{
-    for(int i=0;i<array.size()-1;i++)
-    {
-        for(int j=i+1;j<array.size();j++)
-        {
-            if(array[i]==array[j] && i!=j && dir[i]!='R' && dir[j]!='R') 
-            {
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-                
-                if(dir[i]=='L')
-                {
-                    dir[i]='R';
-                }
-
-                if(dir[j]=='L')
-                {
-                    dir[j]='R';
-                }
-            }
-        }
-    }
-}
 int solve()
 {
     int num;
     cin>>num;
-
     vector<int> array;
-    vector<char> dir(num,'R');
+    vector<int> even,odd;
 
     for(int i=0;i<num;i++)
     {
         int temp;
         cin>>temp;
+
         array.push_back(temp);
+
+        if(i%2==0)
+            even.push_back(temp);
+        else
+            odd.push_back(temp);
     }
 
-    sorting(array,dir);
+    sort(array.begin(),array.end());
+    sort(even.begin(),even.end());
+    sort(odd.begin(),odd.end());
 
-    if(ischeck(dir))
-        cout<<"YES"<<endl;
-    else
+    int e=0,o=0;
+    int flag=1;
+    for(int i=0;i<num;i++)
     {
-        sorting1(array,dir);
-        if(ischeck(dir))
-            cout<<"YES"<<endl;
-        else   
-            cout<<"NO"<<endl;
-    }
+        int ele;
+        if(i%2==0)
+        {
+            ele = even[e];
+            e++;
+        }
+        else
+        {
+            ele = odd[o];
+            o++;
+        }
+            
         
+        if(array[i]!=ele)
+        {
+            flag=0;
+            break;
+        }
+    }
+
+    if(flag==0)
+        cout<<"NO"<<endl;
+    else
+        cout<<"YES"<<endl;
 }
 int main()
 {  
