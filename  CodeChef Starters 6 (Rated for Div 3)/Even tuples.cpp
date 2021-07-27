@@ -1,68 +1,41 @@
 #include <bits/stdc++.h>
 using namespace std;
+//#define'int long long 
 
-
-int fact(int n)
-{
-    int res = 1;
-    for (int i = 2; i <= n; i++)
-        res = res * i;
-    return res;
-}
-
-int nCr(int n, int r)
-{
-    return fact(n) / (fact(r) * fact(n - r));
-}
  
-
-
 void solve()
 {
-    int num,q;
+    long long int num,q;
     cin>>num>>q;
 
-    vector<int> array;
+    vector<long long int> array(num+1,0);
 
-    for(int i=0;i<num;i++)
+    for(long long int i=1;i<=num;i++)
     {
-        int temp;
+        long long int temp;
         cin>>temp;
-        array.push_back(temp);
-    }
-
-    vector<int> odd(num+1,0);
-    vector<int> even(num+1,0);
-
-    int countodd=0;
-    for(int i=1;i<=num;i++)
-    {
-        if(array[i-1]%2!=0)
+        if(temp%2==0)
         {
-            countodd++;
+            array[i]=array[i-1]+1;
         }
-        odd[i] = countodd;
-    }
-
-    int counteven=0;
-    for(int i=1;i<=num;i++)
-    {
-        if(array[i-1]%2==0)
+        else
         {
-            counteven++;
+            array[i]=array[i-1];
         }
-        even[i] = counteven;
     }
-    
+ 
     while(q--)
     {
-        int L,R;
+        long long int L,R;
         cin>>L>>R;
 
-        counteven = even[R] - even[L-1];
-        countodd = odd[R] - odd[L-1];
+        long long int counteven = array[R] - array[L-1];
+        long long int countodd = (R-L+1) - counteven;
 
-        int sum = nCr(counteven,3) + (nCr(countodd,2) * nCr(counteven,1));
+        long long int odd = ((countodd*(countodd-1))/2 ) *counteven;
+        long long int even = ( counteven * (counteven-1) * (counteven - 2) )/6;
+
+        long long int sum = odd + even;
 
         cout<<sum<<endl; 
     }
@@ -71,7 +44,7 @@ int main()
 {  
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    int testCases;
+    long long int testCases;
     cin >> testCases;
    
     while (testCases--)
