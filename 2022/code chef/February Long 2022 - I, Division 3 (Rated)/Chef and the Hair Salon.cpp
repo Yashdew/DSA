@@ -2,13 +2,9 @@
 using namespace std;
 void solve()
 {
-    int X;
-    cin>>X;
-    
-    cout<< (X^1); 
-    cout<<" ";
-    cout<< (X^2);
-    cout<<" "<<X<<endl; 
+    int n,min;
+    cin>>n>>min;
+    cout<<n*min<<endl;
 }
 int main()
 {  

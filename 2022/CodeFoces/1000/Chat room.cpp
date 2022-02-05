@@ -2,28 +2,23 @@
 using namespace std;
 int solve()
 {
-    string str;
+    string str, sampleStr = "hello";
     cin>>str;
-    string strNew;
+
+    int j=0;
+    int count=0;
     for(int i=0;i<str.length();i++)
     {
-        if(str[i]!=str[i+1])
-            strNew+=str[i];
-    }
-
-    int i=0,j=0;
-    string str1 = "helo";
-    string strFinal;
-    while(i<strNew.length() || j<str1.length())
-    {
-        if(str1[j]==strNew[i])
+        if(str[i] == sampleStr[j])
         {
             j++;
-            strFinal+=strNew[i];
-        }   
-        if(strFinal == "helo")
-            return 1; 
-        i++;
+            count++;
+
+            if(count==5)
+            {
+                return 1;
+            }
+        }
     }
     return 0;
 }

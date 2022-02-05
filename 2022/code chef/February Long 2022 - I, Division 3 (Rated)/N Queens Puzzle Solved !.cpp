@@ -2,13 +2,15 @@
 using namespace std;
 void solve()
 {
-    int X;
-    cin>>X;
-    
-    cout<< (X^1); 
-    cout<<" ";
-    cout<< (X^2);
-    cout<<" "<<X<<endl; 
+    float num;
+    cin>>num;
+
+    float sum = pow(0.143*num,num);
+
+    if( sum - floor(sum) < 0.5)
+        cout<<floor(sum)<<endl;
+    else
+        cout<<floor(sum) + 1<<endl;
 }
 int main()
 {  
