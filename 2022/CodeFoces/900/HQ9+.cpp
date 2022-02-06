@@ -8,17 +8,15 @@ void solve()
     int flag=0;
     for(auto it : str)
     {
-        if(it == 'H')
-            flag=1;
-        if(it == 'Q')
-            flag=1;
-        if(it == '9')
-            flag=1;
-        if(it == '+')
-            flag=1;
-
-        if(flag==1)
-            break;
+        if(it>=33 && it<=126)
+        {
+            if(it == 'H')
+                flag=1;
+            if(it == 'Q')
+                flag=1;
+            if(it == '9')
+                flag=1;
+        }
     }
     if(flag==1)
         cout<<"YES"<<endl;
