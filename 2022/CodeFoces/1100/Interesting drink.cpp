@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int countNumShop(int temp,vector<int> shops)
-{
-    
-}
 void solve()
 {
     int num;
@@ -27,7 +23,7 @@ void solve()
     {
         int temp;
         cin>>temp;
-        int count = countNumShop(temp,shops);
+        int count = upper_bound(shops.begin(),shops.end(),temp)-shops.begin();
         cout<<count<<endl;
     }
 }
