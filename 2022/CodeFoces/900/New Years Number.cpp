@@ -1,8 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-int solve()
+void solve()
 {
+    int yearNum;
+    cin>>yearNum;
 
+    int mod = yearNum % 2020;
+    int div = yearNum / 2020;
+
+    if(mod <= div)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
 }
 int main()
 {  
@@ -13,7 +22,7 @@ int main()
    
     while (testCases--)
     {
-            solve();
+        solve();
     }
 
     return 0;
