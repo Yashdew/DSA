@@ -12,14 +12,26 @@ void solve()
         cin>>temp;
         array.push_back(temp);
     }
-    for(int i=0;i<place-1;i++)
+
+    int pos1=0,pos2=0;
+    for(int i=0;i<place;i++)
     {
-        if(array[i]==1 && array[i+1]==0)
-            count=count+1; 
-        else if(array[i]==0 && array[i+1]==1)
-            count=count+1; 
+        if(array[i]==0)
+        {
+            pos1=i-1;
+            break;
+        } 
     }
-    cout<<count<<endl;
+    for(int i=place-1;i>=0;i--)
+    {
+        if(array[i]==0)
+        {
+            pos2=i+1;
+            break;
+        } 
+    }
+
+    cout<<pos2-pos1<<endl;
 }
 int main()
 {  

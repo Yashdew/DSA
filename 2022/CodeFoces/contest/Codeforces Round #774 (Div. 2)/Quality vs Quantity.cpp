@@ -6,45 +6,37 @@ void solve()
     cin>>nums;
 
     vector<long long> array;
-
-    while(nums--){
+    int i=0;
+    while(i<nums){
         long long temp;
         cin>>temp;
-
+        i++;
         array.push_back(temp);
     }
 
     sort(array.begin(),array.end());
 
-    long long countRed = 0;
-    long long countBlue = 0;
-    long long sumRed = 0;
-    long long sumBlue = 0;
-    long long i=0;
-    long long j = array.size()-1;
-    while( i+1 < j)
-    {
-        countBlue=countBlue+2;
-        sumBlue = sumBlue + array[i] + array[i+1];
-        i=i+2;
+   long long blue = array[0]+array[1];
+   long long red = array[nums-1];
+   int low=2,high=nums-2;
 
-        countRed++;
-        sumRed = sumRed + array[j];
-        j--;
+    bool flag=0;
+   while(low<high){
+       if(red>blue)
+       {
+           flag=1;
+           break;
+       }
+       blue+=array[low];
+       red+=array[high];
+       low++;
+       high--;
+   }
 
-        if( (countRed < countBlue) && (sumRed > sumBlue) ){
-            cout<<"YES"<<endl;
-            return;
-        }
-
-        if( i+1 > j)
-        {
-            cout<<"NO"<<endl;
-            return;
-        }
-    }
-
-    cout<<"NO"<<endl;
+    if(flag || red > blue)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
 }
 int main()
 {  
@@ -55,7 +47,7 @@ int main()
    
     while (testCases--)
     {
-            solve();
+        solve();
     }
 
     return 0;
