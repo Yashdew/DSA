@@ -2,18 +2,15 @@
 using namespace std;
 void solve()
 {
-    string str;
-    char c;
-    cin>>str>>c;
+    long long start,end;
 
-    for(int i=0;i<str.length();i++){
-        if(str[i]==c && i%2==0 && (str.length()-i-1)%2==0){
-            cout<<"YES"<<endl;
-            return;
-        }
-            
+    cin>>start>>end;
+    if(2*start > end){
+        cout<<-1<<" "<<-1<<endl;
     }
-    cout<<"NO"<<endl;
+    else{
+        cout<<start<<" "<<2*start<<endl;
+    }
 }
 int main()
 {  

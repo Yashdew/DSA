@@ -2,18 +2,18 @@
 using namespace std;
 void solve()
 {
-    string str;
-    char c;
-    cin>>str>>c;
+    long long num;
+    cin>>num;
 
-    for(int i=0;i<str.length();i++){
-        if(str[i]==c && i%2==0 && (str.length()-i-1)%2==0){
-            cout<<"YES"<<endl;
-            return;
-        }
-            
+    long long count=0;
+    for(int i=0;i<num;i++){
+        long long temp;
+        cin>>temp;
+        count+=(temp==0);
     }
-    cout<<"NO"<<endl;
+
+    cout<<max(count,num-count)<<endl;
+
 }
 int main()
 {  

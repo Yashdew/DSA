@@ -2,18 +2,15 @@
 using namespace std;
 void solve()
 {
-    string str;
-    char c;
-    cin>>str>>c;
+    long long address,houseOnFloor;
+    cin>>address>>houseOnFloor;
 
-    for(int i=0;i<str.length();i++){
-        if(str[i]==c && i%2==0 && (str.length()-i-1)%2==0){
-            cout<<"YES"<<endl;
-            return;
-        }
-            
+    if(address <= 2)
+        cout<<1<<endl;
+    else{
+        long long count = ((address - 3) / houseOnFloor) + 2;
+        cout<<count<<endl; 
     }
-    cout<<"NO"<<endl;
 }
 int main()
 {  

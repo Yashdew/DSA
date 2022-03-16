@@ -2,18 +2,10 @@
 using namespace std;
 void solve()
 {
-    string str;
-    char c;
-    cin>>str>>c;
+    long long A,B,C,D;
+    cin>>A>>B>>C>>D;
 
-    for(int i=0;i<str.length();i++){
-        if(str[i]==c && i%2==0 && (str.length()-i-1)%2==0){
-            cout<<"YES"<<endl;
-            return;
-        }
-            
-    }
-    cout<<"NO"<<endl;
+    cout<<B<<" "<<C<<" "<<C<<endl;
 }
 int main()
 {  

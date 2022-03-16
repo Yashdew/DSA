@@ -2,17 +2,16 @@
 using namespace std;
 void solve()
 {
-    string str;
-    char c;
-    cin>>str>>c;
+    long long num,X;
+    cin>>num>>X;
 
-    for(int i=0;i<str.length();i++){
-        if(str[i]==c && i%2==0 && (str.length()-i-1)%2==0){
+    for(long long i=1;i<=num;i++){
+        if( (X%i==0) && (X/i) <= (num-i+1) ){
             cout<<"YES"<<endl;
             return;
         }
-            
     }
+
     cout<<"NO"<<endl;
 }
 int main()
