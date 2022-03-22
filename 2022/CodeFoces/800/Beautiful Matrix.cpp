@@ -15,7 +15,7 @@ void solve()
             if(temp==1)
             {
                 x = i;
-                y = j;
+                y = j;  
             }
         }
     }
