@@ -1,8 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
-int solve()
+void solve()
 {
+    long long a,b;
 
+    cin>>a>>b; 
+
+    if(a==b)
+        cout<<0<<endl;
+    else if ( a < b){
+        long long temp = (b - a)/10;
+        long long temp1 = (b - a)%10;
+        if(temp1 > 0)
+            cout<<temp+1<<endl;
+        else
+            cout<<temp<<endl;
+
+    }
+    else if( a > b){
+        long long temp = (a - b)/10;
+        long long temp1 = (a - b)%10;
+        if(temp1 > 0)
+            cout<<temp+1<<endl;
+        else
+            cout<<temp<<endl;
+    }
 }
 int main()
 {  
