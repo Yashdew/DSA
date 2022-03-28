@@ -1,8 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-int solve()
+void solve()
 {
-
+    long long num;
+    cin>>num;
+    cout << - (num+1)<<endl; 
 }
 int main()
 {  
@@ -13,7 +15,7 @@ int main()
    
     while (testCases--)
     {
-        solve();
+            solve();
     }
 
     return 0;
