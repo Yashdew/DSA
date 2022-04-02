@@ -2,9 +2,14 @@
 using namespace std;
 void solve()
 {
-    int n,min;
-    cin>>n>>min;
-    cout<<n*min<<endl;
+    long long x,y;
+    cin>>x>>y;
+
+    if(x==0)
+        cout<<1<<endl;
+    else{
+        cout<< (x*1 + y*2 + 1)<<endl;
+    }
 }
 int main()
 {  
