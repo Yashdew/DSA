@@ -1,24 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
-int digitCheck(int num){
-    int sum=0;
-
-    while(num!=0){
-        sum = sum + num%10;
-        num = num/10;
-    }
-
-    return sum%2;
-}
 void solve()
 {
-    long long num;
+    int num;
     cin>>num;
-    
-    if(digitCheck(num)!=digitCheck(num+1))
-        cout<<num+1<<endl;
-    else
-        cout<<num+2<<endl;
+
+    vector<int> L(num,0);
+    vector<int> R(num,0);
+
+    for(int i=0;i<num;i++)
+        cin>>L[i];
+    for(int i=0;i<num;i++)
+        cin>>R[i];
+
+    int ans=0;
+    for(int i=0;i<num-1;i++){
+        ans = ans + min(R[i],L[i+1]);
+    }
+
+    cout<<ans<<endl;
 }
 int main()
 {  
