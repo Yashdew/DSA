@@ -5,26 +5,28 @@ void solve()
     long long num;
     cin>>num;
 
-    int even=0;
-    int odd=0;
-
-    for(int i=0;i<num;i++){
-        long long temp;
+    int i=0;
+    int sum=0;
+    while(i<num){
+        int temp;
         cin>>temp;
+        sum+=temp;
+        i++;
+    }
 
-        if(temp%2==0)
-            even++;
-        else if(temp%2!=0)
-            odd++;
+    int ans=0;
+    for(int i=1;sum >= (i*(i+1))/2;i++){
+        long long temp = (i*(i+1))/2;
+
+        if(temp<=sum){
+            ans=i;
+        }
+        else
+            break;
     }
-    if(odd%2!=0)
-    {
-        cout<<even<<endl;
-    }
-    else{
-        cout<<min(odd/2,even)<<endl;
-    }
-    
+
+    cout<<ans<<endl;
+
 }
 int main()
 {  
