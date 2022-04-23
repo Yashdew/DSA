@@ -2,24 +2,24 @@
 using namespace std;
 void solve()
 {
+    map<long long, long long> hashmap;
+
     long long num;
     cin>>num;
 
-    vector<long long> array;
-
-    long long count1=0,count2=0;
+    long long value=-1;
     for(int i=0;i<num;i++){
         long long temp;
         cin>>temp;
-
-        if(temp==1)
-            count1++;
-        else if(temp==2)
-            count2++;
+        hashmap[temp]++;
+        if(hashmap[temp]==3)
+            value = temp;
     }
 
-    long long count = count1 *(num  - count1) + count1 * (count1 - 1) / 2 +  count2 * (count2 - 1) / 2; 
-    cout<<count<<endl;
+    if(value==-1)
+        cout<<-1<<endl;
+    else
+        cout<<value<<endl;
 }
 int main()
 {  
